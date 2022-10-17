@@ -228,14 +228,15 @@ class Power(AbstractFunction):
 
 class Sin(AbstractFunction):
 
-    def __init__(self, *args):
+    def __init__(self, f, *args):
         self.coeff = np.array(list(args)).flatten()
+        self.f = f
 
     def __repr__(self):
         return "Sin()"
 
     def __str__(self):
-        s = "Sin()({{0}})"
+        s = "Sin()({{0}})".format(self.f)
         return s
 
     def evaluate(self, x):
@@ -255,14 +256,15 @@ class Sin(AbstractFunction):
     
 class Cos(AbstractFunction):
 
-    def __init__(self, *args):
+    def __init__(self, f, *args):
         self.coeff = np.array(list(args)).flatten()
+        self.f = f
 
     def __repr__(self):
         return "Cos()"
 
     def __str__(self):
-        s = "Cos()({{0}})"
+        s = "Cos()({{0}})".format(self.f)
         return s
 
     def evaluate(self, x):
@@ -282,14 +284,15 @@ class Cos(AbstractFunction):
 
 class Log(AbstractFunction):
 
-    def __init__(self, *args):
+    def __init__(self, f, *args):
         self.coeff = np.array(list(args)).flatten()
-
+        self.f = f
+        
     def __repr__(self):
         return "Log()"
 
     def __str__(self):
-        s = "Log()({{0}})"
+        s = "Log()({{0}})".format(self.f)
         return s
 
     def evaluate(self, x):
@@ -309,14 +312,15 @@ class Log(AbstractFunction):
 
 class Exponential(AbstractFunction):
 
-    def __init__(self, *args):
+    def __init__(self, f, *args):
         self.coeff = np.array(list(args)).flatten()
+        self.f = f
 
     def __repr__(self):
         return "Exponential()"
 
     def __str__(self):
-        s = "Exponential()({{0}})"
+        s = "Exponential()({{0}})".format(self.f)
         return s
 
     def evaluate(self, x):
